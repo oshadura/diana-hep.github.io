@@ -7,7 +7,14 @@
 &lt;li&gt;Using Travis to build website -- &lt;a href="http://zonca.github.io/2013/09/automatically-build-pelican-and-publish-to-github-pages.html"&gt;how-to&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;deploying to GitHub pages &lt;a href="http://diana-hep.github.io"&gt;http://diana-hep.github.io&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;created &lt;code&gt;CNAME&lt;/code&gt; file to use custom url &lt;code&gt;diana-hep.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Check math: $pp \to \tilde{\chi}_1^0 \tilde{\chi}_1^\pm$&lt;/li&gt;
+&lt;li&gt;Check code &lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;welcome to Pelican&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;To do: &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;setup DNS for &lt;code&gt;www.diana-hep.org&lt;/code&gt; subdomain using &lt;a href="https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider"&gt;this guide&lt;/a&gt;&lt;/li&gt;
