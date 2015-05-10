@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DIANA HEP</title><link href="/" rel="alternate"></link><link href="/feeds/kyle-cranmer.atom.xml" rel="self"></link><id>/</id><updated>2015-05-10T14:53:00+02:00</updated><entry><title>Hello World</title><link href="/Hello%20World.html" rel="alternate"></link><updated>2015-05-10T14:53:00+02:00</updated><author><name>Kyle Cranmer</name></author><id>tag:,2015-05-10:Hello World.html</id><summary type="html">&lt;p&gt;Initial post for DIANA-HEP.&lt;/p&gt;</summary><category term="news"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DIANA HEP</title><link href="/" rel="alternate"></link><link href="/feeds/kyle-cranmer.atom.xml" rel="self"></link><id>/</id><updated>2015-05-10T14:53:00+02:00</updated><entry><title>Hello World</title><link href="/Hello%20World.html" rel="alternate"></link><updated>2015-05-10T14:53:00+02:00</updated><author><name>Kyle Cranmer</name></author><id>tag:,2015-05-10:Hello World.html</id><summary type="html">&lt;p&gt;Initial post for DIANA-HEP.&lt;/p&gt;
+&lt;p&gt;Progress:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Created &lt;a href="https://github.com/diana-hep"&gt;DIANA-HEP GitHub Organization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Using &lt;a href="http://getpelican.com"&gt;Pelican&lt;/a&gt; to generate website&lt;/li&gt;
+&lt;li&gt;Using Travis to build website -- &lt;a href="http://zonca.github.io/2013/09/automatically-build-pelican-and-publish-to-github-pages.html"&gt;how-to&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;deploying to GitHub pages &lt;a href="http://diana-hep.github.io"&gt;http://diana-hep.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;created &lt;code&gt;CNAME&lt;/code&gt; file to use custom url &lt;code&gt;diana-hep.org&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To do: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;setup DNS for &lt;code&gt;www.diana-hep.org&lt;/code&gt; subdomain using &lt;a href="https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider"&gt;this guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;setup DNS for &lt;code&gt;diana-hep.org&lt;/code&gt; apex domain using &lt;a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/"&gt;this guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Status of build:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://travis-ci.org/diana-hep/diana-hep.github.io-source.svg?branch=master" /&gt;&lt;/p&gt;</summary><category term="news"></category></entry></feed>
