@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Articles by Kyle Cranmer - DIANA HEP</title>
+    <title>Search - DIANA HEP
+</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -229,27 +230,7 @@ DIANA HEP            </a>
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="/Hello World.html">Hello World</a></h2>
-                <div class="summary"><p>Initial post for DIANA-HEP.</p>
-<p>Status of build:</p>
-<p><img alt="" src="https://travis-ci.org/diana-hep/diana-hep.github.io-source.svg?branch=master" /></p>
-<p>To do: </p>
-<ul>
-<li>setup DNS for <code>www.diana-hep.org</code> subdomain using <a href="https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider">this guide</a></li>
-<li>setup DNS for <code>diana-hep.org</code> apex domain using <a href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/">this guide</a></li>
-</ul>
-<p>Progress:</p>
-<ul>
-<li>Created <a href="https://github.com/diana-hep">DIANA-HEP GitHub Organization</a></li>
-<li>Using <a href="http://getpelican.com">Pelican</a> to generate website</li>
-<li>Using Travis to build website -- <a href="http://zonca.github.io/2013/09/automatically-build-pelican-and-publish-to-github-pages.html">how-to</a></li>
-<li>deploying to GitHub pages <a href="http://diana-hep.github.io">http ...</a></li></ul>
-                    <a class="btn btn-default btn-xs" href="/Hello World.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-
+<div id="tipue_search_content"></div>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -366,5 +347,18 @@ DIANA HEP            </a>
     </script>
     <!-- End Disqus Code -->
 
+    <link href="/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <script type="text/javascript" src="/theme/tipuesearch/tipuesearch_set.js"></script>
+    <script type="text/javascript" src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('#tipue_search_input').tipuesearch({
+        'mode' : 'json',
+        'show': 10,
+        'newWindow': false,
+        'contentLocation': 'tipuesearch_content.json'
+      });
+    });
+    </script>
 </body>
 </html>
