@@ -30,9 +30,10 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Particle physicisits primarily use &lt;a href="http://root.cern.ch"&gt;ROOT&lt;/a&gt; for the data analysis framework.  Part of that framework is a package called &lt;a href="http://root.cern.ch/drupal/content/users-guide#roofit"&gt;RooFit&lt;/a&gt; statistical modeling and fitting package.  I have contributed to this package and added a layer on top called &lt;a href="https://twiki.cern.ch/twiki/bin/view/RooStats/WebHome"&gt;RooStats&lt;/a&gt; that provides with statistical inference in both frequentist and Bayesian paradigms based on statistical models made with RooFit. These are the tools that were used to claim the discover the Higgs boson, and those &lt;a href="http://blogs.discovermagazine.com/cosmicvariance/2011/12/08/making-the-higgs-sausage/?utm_source=feedburner&amp;amp;utm_medium=feed&amp;amp;utm_campaign=Feed%3A+CosmicVariance+%28Cosmic+Variance%29#.UxFW0NyrvlI"&gt;statistical models get pretty complicated&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Here I demonstrate a simple example of RooFit&amp;#39;s ability to create a statistical model, generate some simulated data, fit that data, create the profile likelihood, and provide a covariance matrix from the likelihood fit.  &lt;/p&gt;
-&lt;p&gt;ROOT is a C++ library, but it has python bindings known as PyROOT.  &lt;/p&gt;
+&lt;p&gt;Particle physicisits primarily use &lt;a href="http://root.cern.ch"&gt;ROOT&lt;/a&gt; for the data analysis framework.  Part of that framework is a package called &lt;a href="http://root.cern.ch/drupal/content/users-guide#roofit"&gt;RooFit&lt;/a&gt; statistical modeling and fitting package.  I have contributed to this package and added a layer on top called &lt;a href="https://twiki.cern.ch/twiki/bin/view/RooStats/WebHome"&gt;RooStats&lt;/a&gt; that provides with statistical inference in both frequentist and Bayesian paradigms based on statistical models made with RooFit. These are the tools that were used to claim the discover the Higgs boson, and those &lt;a href="http://blogs.discovermagazine.com/cosmicvariance/2011/12/08/making-the-higgs-sausage/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+CosmicVariance+%28Cosmic+Variance%29#.UxFW0NyrvlI"&gt;statistical models get pretty complicated&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here I demonstrate a simple example of RooFit's ability to create a statistical model, generate some simulated data, fit that data, create the profile likelihood, and provide a covariance matrix from the likelihood fit.&lt;/p&gt;
+&lt;p&gt;ROOT is a C++ library, but it has python bindings known as PyROOT.&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -41,7 +42,7 @@
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;ROOT&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;ROOT&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;rootnotes&lt;/span&gt; &lt;span class="c"&gt;#for plotting with iPython&lt;/span&gt;
 &lt;span class="n"&gt;c1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;rootnotes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;default_canvas&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -56,8 +57,10 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Here we create a &amp;quot;workspace&amp;quot; object that provides a factory with a convenient syntax for statistical models and variables. The workspace also provides an I/O mechanism to read/write statistical models and data to/from files.&lt;/p&gt;
-&lt;p&gt;In this example, we create a mixture model of a falling exponential distribution and a Gaussian for a variable x.&lt;br&gt;This is really a marked Poisson process, because in addition to the pdf on x, we also encode that we expect s=50 events from the Gaussian and b=100 events from the falling exponential.&lt;/p&gt;
+&lt;p&gt;Here we create a "workspace" object that provides a factory with a convenient syntax for statistical models and variables. The workspace also provides an I/O mechanism to read/write statistical models and data to/from files.&lt;/p&gt;
+&lt;p&gt;In this example, we create a mixture model of a falling exponential distribution and a Gaussian for a variable x.&lt;br&gt;
+This is really a marked Poisson process, because in addition to the pdf on x, we also encode that we expect s=50 events from the Gaussian and b=100 events from the falling exponential.&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -66,7 +69,7 @@
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;w&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ROOT&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;RooWorkspace&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="n"&gt;w&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ROOT&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;RooWorkspace&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;factory&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Gaussian::g(x[-5,5],mu[-3,3],sigma[1])&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;factory&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Exponential::e(x,tau[-.5,-3,0])&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;factory&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;SUM::model(s[50,0,100]*g,b[100,0,1000]*e)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -83,9 +86,7 @@
 
 &lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_stream output_stderr output_text"&gt;
-&lt;pre&gt;
-TClass::TClass:0: RuntimeWarning: no dictionary for class stack&amp;lt;RooAbsArg*,deque&amp;lt;RooAbsArg*&amp;gt; &amp;gt; is available
-
+&lt;pre&gt;TClass::TClass:0: RuntimeWarning: no dictionary for class stack&amp;lt;RooAbsArg*,deque&amp;lt;RooAbsArg*&amp;gt; &amp;gt; is available
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -100,6 +101,7 @@ TClass::TClass:0: RuntimeWarning: no dictionary for class stack&amp;lt;RooAbsArg
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Now that we have made the mdoel, we can generate some fake data, make a plot of the data, fit the model to that data, and overlay the fitted model in the plot&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -108,7 +110,7 @@ TClass::TClass:0: RuntimeWarning: no dictionary for class stack&amp;lt;RooAbsArg
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;pdf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pdf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;model&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;frame&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;frame&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pdf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;generate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ROOT&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;RooArgSet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -130,7 +132,7 @@ TClass::TClass:0: RuntimeWarning: no dictionary for class stack&amp;lt;RooAbsArg
 &lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
 
 
-&lt;div class="output_png output_subarea output_pyout"&gt;
+&lt;div class="output_png output_subarea output_execute_result"&gt;
 &lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxwAAAI8CAIAAAD0vjrdAAAABmJLR0QAAAAAAAD5Q7t/AAAgAElE
 QVR4nO3dzY8cx33w8ern0ZXpHUAXglwnARJSlHKxAOs6Pc+JfCgpiAKZupC8kdxlTpIccJk405ME
 j40g1iVwZOwtzMWKEQOxwvg4PTmahyBAJFmCIVDk8OATZ/6Cfg6lbfX229T0VHVXdX0/EIRhT79U
@@ -426,6 +428,7 @@ FQAAgAYEVQAAABoQVAEAAGhAUAUAAKABQRUAAIAG/x/9TWIki6MsbAAAAABJRU5ErkJggg==
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;We can check the value of the parameters after the fit&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -434,8 +437,8 @@ FQAAgAYEVQAAABoQVAEAAGhAUAUAAKABQRUAAIAG/x/9TWIki6MsbAAAAABJRU5ErkJggg==
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;mu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;mu&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;best fit value of mean for Gaussian is&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getVal&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;±&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getError&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="n"&gt;mu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;mu&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;best fit value of mean for Gaussian is&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getVal&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;±&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mu&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getError&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -448,9 +451,7 @@ FQAAgAYEVQAAABoQVAEAAGhAUAUAAKABQRUAAIAG/x/9TWIki6MsbAAAAABJRU5ErkJggg==
 
 &lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;
-best fit value of mean for Gaussian is 0.324840840875 ± 0.158716435359
-
+&lt;pre&gt;best fit value of mean for Gaussian is 0.324840840875 ± 0.158716435359
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
